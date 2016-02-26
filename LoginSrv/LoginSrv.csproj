@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A9EAE4CD-860D-4E42-B7D3-DB735E0F3BFC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>sc.Net</RootNamespace>
+    <AssemblyName>sc.Net</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>D:\MirServer\LoginSrv\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Grobal2.cs" />
+    <Compile Include="IDDB.cs" />
+    <Compile Include="LoadConfig.cs" />
+    <Compile Include="Model\TConnInfo.cs" />
+    <Compile Include="Model\TGateInfo.cs" />
+    <Compile Include="Model\TProgamType.cs" />
+    <Compile Include="Model\TScriptConfig.cs" />
+    <Compile Include="Model\TScriptOption.cs" />
+    <Compile Include="Model\TUserInfo.cs" />
+    <Compile Include="MudUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasicSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BasicSet.Designer.cs">
+      <DependentUpon>BasicSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditUserInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditUserInfo.Designer.cs">
+      <DependentUpon>EditUserInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FAccountView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FAccountView.Designer.cs">
+      <DependentUpon>FAccountView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFindId.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFindId.Designer.cs">
+      <DependentUpon>FrmFindId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GateSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GateSet.Designer.cs">
+      <DependentUpon>GateSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GrobalSession.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GrobalSession.Designer.cs">
+      <DependentUpon>GrobalSession.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TFrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TFrmMain.Designer.cs">
+      <DependentUpon>TFrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LSShare.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MasSock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasSock.Designer.cs">
+      <DependentUpon>MasSock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MonSoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonSoc.Designer.cs">
+      <DependentUpon>MonSoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <EmbeddedResource Include="FAccountView.resx">
+      <DependentUpon>FAccountView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GateSet.resx">
+      <DependentUpon>GateSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasSock.resx">
+      <DependentUpon>MasSock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TFrmMain.resx">
+      <DependentUpon>TFrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GameFramework\GameFramework.csproj">
+      <Project>{AB8DFE62-D072-4ED1-87AF-8DA93CAAADAC}</Project>
+      <Name>GameFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NetFramework\NetFramework.csproj">
+      <Project>{B22A2449-8803-4649-8D29-9F19CE8324E4}</Project>
+      <Name>NetFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+      <Target Name="BeforeBuild">
+      </Target>
+     <Target Name="AfterBuild">
+     </Target>
+-->
+</Project>

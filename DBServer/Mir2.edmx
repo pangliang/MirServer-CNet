@@ -1,0 +1,792 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Mir2Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="Mir2ModelStoreContainer">
+          <EntitySet Name="HumDataInfo" EntityType="Mir2Model.Store.HumDataInfo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="HumInfo" EntityType="Mir2Model.Store.HumInfo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="NakedAbility" EntityType="Mir2Model.Store.NakedAbility" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserAttribute" EntityType="Mir2Model.Store.UserAttribute" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserBagItemInfo" EntityType="Mir2Model.Store.UserBagItemInfo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserInfo" EntityType="Mir2Model.Store.UserInfo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserItemInfo" EntityType="Mir2Model.Store.UserItemInfo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserStatus" EntityType="Mir2Model.Store.UserStatus" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserStorageItems" EntityType="Mir2Model.Store.UserStorageItems" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="HumDataInfo">
+          <Key>
+            <PropertyRef Name="nId" />
+          </Key>
+          <Property Name="nId" Type="int" Nullable="false" />
+          <Property Name="dCreateDate" Type="float" />
+          <Property Name="sChrName" Type="varchar" MaxLength="14" />
+          <Property Name="sCurMap" Type="varchar" MaxLength="16" />
+          <Property Name="wCurX" Type="int" />
+          <Property Name="wCurY" Type="int" />
+          <Property Name="NG" Type="int" />
+          <Property Name="MaxNG" Type="int" />
+          <Property Name="wStatusTimeArr" Type="varbinary" MaxLength="24" />
+          <Property Name="sHomeMap" Type="varchar" MaxLength="16" />
+          <Property Name="wHomeX" Type="int" />
+          <Property Name="wHomeY" Type="int" />
+          <Property Name="btCreditPoint" Type="int" />
+          <Property Name="btUnKnow2" Type="varbinary" MaxLength="3" />
+          <Property Name="nBonusPoint" Type="int" />
+          <Property Name="btF9" Type="tinyint" />
+          <Property Name="btIncHealth" Type="tinyint" />
+          <Property Name="btIncSpell" Type="tinyint" />
+          <Property Name="btIncHealing" Type="tinyint" />
+          <Property Name="btEF" Type="tinyint" />
+          <Property Name="wContribution" Type="int" />
+          <Property Name="nHungerStatus" Type="int" />
+          <Property Name="btLastOutStatus" Type="tinyint" />
+          <Property Name="btStatus" Type="tinyint" />
+          <Property Name="UnKnow" Type="varbinary" MaxLength="30" />
+          <Property Name="HumMagicsBuff" Type="varbinary" MaxLength="240" />
+          <Property Name="HumAddItemsBuff" Type="varbinary" MaxLength="160" />
+        </EntityType>
+        <EntityType Name="HumInfo">
+          <Key>
+            <PropertyRef Name="nID" />
+          </Key>
+          <Property Name="nID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="boDeleted" Type="bit" />
+          <Property Name="nSelectID" Type="tinyint" />
+          <Property Name="boIsHero" Type="bit" />
+          <Property Name="bt2" Type="tinyint" />
+          <Property Name="dCreateDate" Type="float" />
+          <Property Name="sName" Type="varchar" MaxLength="15" />
+          <Property Name="sChrName" Type="varchar" MaxLength="14" />
+          <Property Name="sAccount" Type="varchar" MaxLength="50" />
+          <Property Name="boDeleted1" Type="bit" />
+          <Property Name="boIsHero1" Type="bit" />
+          <Property Name="dModDate" Type="float" />
+          <Property Name="btCount" Type="tinyint" />
+          <Property Name="boSelected" Type="bit" />
+          <Property Name="n6" Type="varbinary" MaxLength="6" />
+        </EntityType>
+        <EntityType Name="NakedAbility">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="14" />
+          <Property Name="Dc" Type="int" Nullable="false" />
+          <Property Name="Mc" Type="int" Nullable="false" />
+          <Property Name="Sc" Type="int" Nullable="false" />
+          <Property Name="Ac" Type="int" Nullable="false" />
+          <Property Name="Mac" Type="int" Nullable="false" />
+          <Property Name="Hp" Type="int" Nullable="false" />
+          <Property Name="Mp" Type="int" Nullable="false" />
+          <Property Name="Hit" Type="int" Nullable="false" />
+          <Property Name="Speed" Type="int" Nullable="false" />
+          <Property Name="X2" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserAttribute">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="14" />
+          <Property Name="Level" Type="int" Nullable="false" />
+          <Property Name="Ac" Type="int" Nullable="false" />
+          <Property Name="Mac" Type="int" Nullable="false" />
+          <Property Name="Dc" Type="int" Nullable="false" />
+          <Property Name="Mc" Type="int" Nullable="false" />
+          <Property Name="Sc" Type="int" Nullable="false" />
+          <Property Name="Hp" Type="int" Nullable="false" />
+          <Property Name="Mp" Type="int" Nullable="false" />
+          <Property Name="MaxHp" Type="int" Nullable="false" />
+          <Property Name="MaxMp" Type="int" Nullable="false" />
+          <Property Name="Exp" Type="int" Nullable="false" />
+          <Property Name="MaxExp" Type="int" Nullable="false" />
+          <Property Name="Weight" Type="int" Nullable="false" />
+          <Property Name="MaxWeight" Type="int" Nullable="false" />
+          <Property Name="WearWeight" Type="int" Nullable="false" />
+          <Property Name="MaxWearWeight" Type="int" Nullable="false" />
+          <Property Name="HandWeight" Type="int" Nullable="false" />
+          <Property Name="MaxHandWeight" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserBagItemInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="14" />
+          <Property Name="MakeIndex" Type="int" Nullable="false" />
+          <Property Name="ItemNumber" Type="int" Nullable="false" />
+          <Property Name="Dura" Type="int" Nullable="false" />
+          <Property Name="MaxDura" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Attribute" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="sAccount" Type="nvarchar" Nullable="false" MaxLength="16" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="14" />
+          <Property Name="Sex" Type="int" Nullable="false" />
+          <Property Name="Job" Type="int" Nullable="false" />
+          <Property Name="Hair" Type="int" Nullable="false" />
+          <Property Name="Dir" Type="int" Nullable="false" />
+          <Property Name="PkPoint" Type="int" Nullable="false" />
+          <Property Name="GameGold" Type="int" Nullable="false" />
+          <Property Name="GameDiaMond" Type="int" Nullable="false" />
+          <Property Name="GameGird" Type="int" Nullable="false" />
+          <Property Name="GamePoint" Type="int" Nullable="false" />
+          <Property Name="GameGlory" Type="int" Nullable="false" />
+          <Property Name="MasterCount" Type="int" Nullable="false" />
+          <Property Name="MasterName" Type="nvarchar" Nullable="false" MaxLength="14" />
+          <Property Name="DearName" Type="nvarchar" Nullable="false" MaxLength="14" />
+          <Property Name="StoragePwd" Type="nvarchar" Nullable="false" MaxLength="14" />
+          <Property Name="HeroName" Type="nvarchar" Nullable="false" MaxLength="14" />
+        </EntityType>
+        <EntityType Name="UserItemInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="14" />
+          <Property Name="MakeIndex" Type="int" Nullable="false" />
+          <Property Name="ItemNumber" Type="int" Nullable="false" />
+          <Property Name="Dura" Type="int" Nullable="false" />
+          <Property Name="MaxDura" Type="int" Nullable="false" />
+          <Property Name="Attribute" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserStatus">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="14" />
+          <Property Name="ReLevel" Type="int" Nullable="false" />
+          <Property Name="boMaster" Type="bit" Nullable="false" />
+          <Property Name="IsDelete" Type="bit" Nullable="false" />
+          <Property Name="IsSelect" Type="bit" Nullable="false" />
+          <Property Name="IsLockLogon" Type="bit" Nullable="false" />
+          <Property Name="HaveHero" Type="bit" Nullable="false" />
+          <Property Name="IsHero" Type="bit" Nullable="false" />
+          <Property Name="AttatckMode" Type="int" Nullable="false" />
+          <Property Name="AllowGroup" Type="int" Nullable="false" />
+          <Property Name="GroupRcallTime" Type="int" Nullable="false" />
+          <Property Name="QuestFlag" Type="tinyint" Nullable="false" />
+          <Property Name="ExpRate" Type="int" Nullable="false" />
+          <Property Name="ExpTime" Type="int" Nullable="false" />
+          <Property Name="AllowGuildReCall" Type="int" Nullable="false" />
+          <Property Name="AllowGroupReCall" Type="int" Nullable="false" />
+          <Property Name="FightZoneDieCount" Type="int" Nullable="false" />
+          <Property Name="IsDivorce" Type="bit" Nullable="false" />
+          <Property Name="MarryCount" Type="int" Nullable="false" />
+          <Property Name="nLoyal" Type="int" Nullable="false" />
+          <Property Name="PayMentPoint" Type="int" Nullable="false" />
+          <Property Name="BodyLuck" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserStorageItems">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="14" />
+          <Property Name="MakeIndex" Type="int" Nullable="false" />
+          <Property Name="ItemNumber" Type="int" Nullable="false" />
+          <Property Name="Dura" Type="int" Nullable="false" />
+          <Property Name="MaxDura" Type="int" Nullable="false" />
+          <Property Name="Attribute" Type="tinyint" Nullable="false" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Mir2Model" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="Mir2Entities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <EntitySet Name="HumDataInfo" EntityType="Mir2Model.HumDataInfo" />
+          <EntitySet Name="HumInfo" EntityType="Mir2Model.HumInfo" />
+          <EntitySet Name="TEST" EntityType="Mir2Model.TEST" />
+          <EntitySet Name="UserStorageItems集" EntityType="Mir2Model.UserStorageItems" />
+          <EntitySet Name="UserItemInfo集" EntityType="Mir2Model.UserItemInfo" />
+          <EntitySet Name="UserInfo集" EntityType="Mir2Model.UserInfo" />
+          <EntitySet Name="UserAttribute集" EntityType="Mir2Model.UserAttribute" />
+          <EntitySet Name="UserStatus集" EntityType="Mir2Model.UserStatus" />
+          <EntitySet Name="NakedAbility集" EntityType="Mir2Model.NakedAbility" />
+          <EntitySet Name="UserBagItemInfo集" EntityType="Mir2Model.UserBagItemInfo" />
+          <EntitySet Name="UserStatus1集" EntityType="Mir2Model.UserStatus1" />
+          <EntitySet Name="NakedAbility1集" EntityType="Mir2Model.NakedAbility1" />
+          <EntitySet Name="UserAttribute1集" EntityType="Mir2Model.UserAttribute1" />
+          <EntitySet Name="UserBagItemInfo1集" EntityType="Mir2Model.UserBagItemInfo1" />
+          <EntitySet Name="UserInfo1集" EntityType="Mir2Model.UserInfo1" />
+          <EntitySet Name="UserItemInfo1集" EntityType="Mir2Model.UserItemInfo1" />
+          <EntitySet Name="UserStorageItems" EntityType="Mir2Model.UserStorageItem" />
+        </EntityContainer>
+        <EntityType Name="HumDataInfo">
+          <Key>
+            <PropertyRef Name="nId" />
+          </Key>
+          <Property Name="nId" Type="Int32" Nullable="false" />
+          <Property Name="dCreateDate" Type="Double" />
+          <Property Name="sChrName" Type="String" MaxLength="14" Unicode="false" FixedLength="false" />
+          <Property Name="sCurMap" Type="String" MaxLength="16" Unicode="false" FixedLength="false" />
+          <Property Name="wCurX" Type="Int32" />
+          <Property Name="wCurY" Type="Int32" />
+          <Property Name="NG" Type="Int32" />
+          <Property Name="MaxNG" Type="Int32" />
+          <Property Name="wStatusTimeArr" Type="Binary" MaxLength="24" FixedLength="false" />
+          <Property Name="sHomeMap" Type="String" MaxLength="16" Unicode="false" FixedLength="false" />
+          <Property Name="wHomeX" Type="Int32" />
+          <Property Name="wHomeY" Type="Int32" />
+          <Property Name="btCreditPoint" Type="Int32" />
+          <Property Name="btUnKnow2" Type="Binary" MaxLength="3" FixedLength="false" />
+          <Property Name="nBonusPoint" Type="Int32" />
+          <Property Name="btF9" Type="Byte" />
+          <Property Name="btIncHealth" Type="Byte" />
+          <Property Name="btIncSpell" Type="Byte" />
+          <Property Name="btIncHealing" Type="Byte" />
+          <Property Name="btEF" Type="Byte" />
+          <Property Name="wContribution" Type="Int32" />
+          <Property Name="nHungerStatus" Type="Int32" />
+          <Property Name="btLastOutStatus" Type="Byte" />
+          <Property Name="btStatus" Type="Byte" />
+          <Property Name="UnKnow" Type="Binary" MaxLength="30" FixedLength="false" />
+          <Property Name="HumMagicsBuff" Type="Binary" MaxLength="240" FixedLength="false" />
+          <Property Name="HumAddItemsBuff" Type="Binary" MaxLength="160" FixedLength="false" />
+          </EntityType>
+        <EntityType Name="HumInfo">
+          <Key>
+            <PropertyRef Name="nID" />
+          </Key>
+          <Property xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" Name="nID" Nullable="false" a:StoreGeneratedPattern="Identity" Type="Int32" />
+          <Property Name="boDeleted" Type="Boolean" />
+          <Property Name="nSelectID" Type="Byte" />
+          <Property Name="boIsHero" Type="Boolean" />
+          <Property Name="bt2" Type="Byte" />
+          <Property Name="dCreateDate" Type="Double" />
+          <Property Name="sName" MaxLength="15" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="sChrName" MaxLength="14" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="sAccount" MaxLength="50" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="boDeleted1" Type="Boolean" />
+          <Property Name="boIsHero1" Type="Boolean" />
+          <Property Name="dModDate" Type="Double" />
+          <Property Name="btCount" Type="Byte" />
+          <Property Name="boSelected" Type="Boolean" />
+          <Property Name="n6" MaxLength="6" FixedLength="false" Type="Binary" />
+        </EntityType>
+        <EntityType Name="TEST">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Nullable="false" Type="Int32" />
+          <Property Name="NAME" MaxLength="50" FixedLength="false" Unicode="false" Type="String" />
+        </EntityType>
+        <EntityType Name="UserStorageItems">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="UserName" Nullable="false" />
+          <Property Type="String" Name="MakeIndex" Nullable="false" />
+          <Property Type="String" Name="ItemNumber" Nullable="false" />
+          <Property Type="String" Name="Dura" Nullable="false" />
+          <Property Type="String" Name="MaxDura" Nullable="false" />
+          <Property Type="Byte" Name="Attribute" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserItemInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="UserName" Nullable="false" />
+          <Property Type="String" Name="MakeIndex" Nullable="false" />
+          <Property Type="String" Name="ItemNumber" Nullable="false" />
+          <Property Type="String" Name="Dura" Nullable="false" />
+          <Property Type="String" Name="MaxDura" Nullable="false" />
+          <Property Type="Byte" Name="Attribute" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="sAccount" Nullable="false" />
+          <Property Type="String" Name="UserName" Nullable="false" />
+          <Property Type="String" Name="Sex" Nullable="false" />
+          <Property Type="String" Name="Job" Nullable="false" />
+          <Property Type="String" Name="Hair" Nullable="false" />
+          <Property Type="String" Name="Dir" Nullable="false" />
+          <Property Type="String" Name="GameGold" Nullable="false" />
+          <Property Type="String" Name="GameDiaMond" Nullable="false" />
+          <Property Type="String" Name="GameGird" Nullable="false" />
+          <Property Type="String" Name="GamePoint" Nullable="false" />
+          <Property Type="String" Name="GameGlory" Nullable="false" />
+          <Property Type="String" Name="MasterCount" Nullable="false" />
+          <Property Type="String" Name="MasterName" Nullable="false" />
+          <Property Type="String" Name="DearName" Nullable="false" />
+          <Property Type="String" Name="StoragePwd" Nullable="false" />
+          <Property Type="String" Name="HeroName" Nullable="false" />
+          <Property Type="String" Name="PkPoint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserAttribute">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="UserName" Nullable="false" >
+            <Documentation>
+              <Summary>玩家名称</Summary>
+              <LongDescription>玩家名称</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="Int32" Name="Level" Nullable="false" ConcurrencyMode="None" DefaultValue="1" />
+          <Property Type="Int32" Name="Ac" Nullable="false" DefaultValue="0" >
+            <Documentation>
+              <Summary>攻击</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Int32" Name="Mac" Nullable="false" DefaultValue="0" />
+          <Property Type="Int32" Name="Dc" Nullable="false" DefaultValue="0" />
+          <Property Type="Int32" Name="Mc" Nullable="false" DefaultValue="0" />
+          <Property Type="Int32" Name="Sc" Nullable="false" DefaultValue="0" />
+          <Property Type="Int32" Name="Hp" Nullable="false" DefaultValue="0" />
+          <Property Type="Int32" Name="Mp" Nullable="false" DefaultValue="0" />
+          <Property Type="Int32" Name="MaxHp" Nullable="false" DefaultValue="0" />
+          <Property Type="Int32" Name="MaxMp" Nullable="false" DefaultValue="0" />
+          <Property Type="Int32" Name="Exp" Nullable="false" DefaultValue="0" />
+          <Property Type="Int32" Name="MaxExp" Nullable="false" DefaultValue="0" />
+          <Property Type="Int32" Name="Weight" Nullable="false" DefaultValue="0" />
+          <Property Type="Int32" Name="MaxWeight" Nullable="false" DefaultValue="0" />
+          <Property Type="Int32" Name="WearWeight" Nullable="false" DefaultValue="0" />
+          <Property Type="Int32" Name="MaxWearWeight" Nullable="false" DefaultValue="0" />
+          <Property Type="Int32" Name="HandWeight" Nullable="false" DefaultValue="0" />
+          <Property Type="Int32" Name="MaxHandWeight" Nullable="false" DefaultValue="0" />
+        </EntityType>
+        <EntityType Name="UserStatus">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="UserName" Nullable="false" />
+          <Property Type="String" Name="ReLevel" Nullable="false" />
+          <Property Type="String" Name="boMaster" Nullable="false" />
+          <Property Type="String" Name="IsDelete" Nullable="false" />
+          <Property Type="String" Name="IsSelect" Nullable="false" />
+          <Property Type="String" Name="IsLockLogon" Nullable="false" >
+            <Documentation>
+              <Summary>是否禁止登录</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="String" Name="HaveHero" Nullable="false" />
+          <Property Type="Boolean" Name="IsHero" Nullable="false" />
+          <Property Type="String" Name="AttatckMode" Nullable="false" />
+          <Property Type="String" Name="AllowGroup" Nullable="false" />
+          <Property Type="String" Name="GroupRcallTime" Nullable="false" />
+          <Property Type="Byte" Name="QuestFlag" Nullable="false" />
+          <Property Type="String" Name="ExpRate" Nullable="false" />
+          <Property Type="String" Name="ExpTime" Nullable="false" />
+          <Property Type="String" Name="AllowGuildReCall" Nullable="false" />
+          <Property Type="String" Name="AllowGroupReCall" Nullable="false" />
+          <Property Type="String" Name="FightZoneDieCount" Nullable="false" >
+            <Documentation>
+              <Summary>行会战争地图死亡次数</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="String" Name="IsDivorce" Nullable="false" />
+          <Property Type="String" Name="MarryCount" Nullable="false" />
+          <Property Type="String" Name="nLoyal" Nullable="false" />
+          <Property Type="String" Name="PayMentPoint" Nullable="false" />
+          <Property Type="String" Name="BodyLuck" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NakedAbility">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="UserName" Nullable="false" />
+          <Property Type="String" Name="Dc" Nullable="false" />
+          <Property Type="String" Name="Mc" Nullable="false" />
+          <Property Type="String" Name="Sc" Nullable="false" />
+          <Property Type="String" Name="Ac" Nullable="false" />
+          <Property Type="String" Name="Mac" Nullable="false" />
+          <Property Type="String" Name="Hp" Nullable="false" />
+          <Property Type="String" Name="Mp" Nullable="false" />
+          <Property Type="String" Name="Hit" Nullable="false" />
+          <Property Type="String" Name="Speed" Nullable="false" />
+          <Property Type="String" Name="X2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserBagItemInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="UserName" Nullable="false" />
+          <Property Type="String" Name="MakeIndex" Nullable="false" />
+          <Property Type="String" Name="ItemNumber" Nullable="false" />
+          <Property Type="String" Name="Dura" Nullable="false" />
+          <Property Type="String" Name="MaxDura" Nullable="false" />
+          <Property Type="Byte" Name="Attribute" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserStatus1">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ReLevel" Nullable="false" />
+          <Property Type="Boolean" Name="boMaster" Nullable="false" />
+          <Property Type="Boolean" Name="IsDelete" Nullable="false" />
+          <Property Type="Boolean" Name="IsSelect" Nullable="false" />
+          <Property Type="Boolean" Name="IsLockLogon" Nullable="false" />
+          <Property Type="Boolean" Name="HaveHero" Nullable="false" />
+          <Property Type="Boolean" Name="IsHero" Nullable="false" />
+          <Property Type="Int32" Name="AttatckMode" Nullable="false" />
+          <Property Type="Int32" Name="AllowGroup" Nullable="false" />
+          <Property Type="Int32" Name="GroupRcallTime" Nullable="false" />
+          <Property Type="Byte" Name="QuestFlag" Nullable="false" />
+          <Property Type="Int32" Name="ExpRate" Nullable="false" />
+          <Property Type="Int32" Name="ExpTime" Nullable="false" />
+          <Property Type="Int32" Name="AllowGuildReCall" Nullable="false" />
+          <Property Type="Int32" Name="AllowGroupReCall" Nullable="false" />
+          <Property Type="Int32" Name="FightZoneDieCount" Nullable="false" />
+          <Property Type="Boolean" Name="IsDivorce" Nullable="false" />
+          <Property Type="Int32" Name="MarryCount" Nullable="false" />
+          <Property Type="Int32" Name="nLoyal" Nullable="false" />
+          <Property Type="Int32" Name="PayMentPoint" Nullable="false" />
+          <Property Type="Int32" Name="BodyLuck" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NakedAbility1">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Dc" Nullable="false" />
+          <Property Type="Int32" Name="Mc" Nullable="false" />
+          <Property Type="Int32" Name="Sc" Nullable="false" />
+          <Property Type="Int32" Name="Ac" Nullable="false" />
+          <Property Type="Int32" Name="Mac" Nullable="false" />
+          <Property Type="Int32" Name="Hp" Nullable="false" />
+          <Property Type="Int32" Name="Mp" Nullable="false" />
+          <Property Type="Int32" Name="Hit" Nullable="false" />
+          <Property Type="Int32" Name="Speed" Nullable="false" />
+          <Property Type="Int32" Name="X2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserAttribute1">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Level" Nullable="false" />
+          <Property Type="Int32" Name="Ac" Nullable="false" />
+          <Property Type="Int32" Name="Mac" Nullable="false" />
+          <Property Type="Int32" Name="Dc" Nullable="false" />
+          <Property Type="Int32" Name="Mc" Nullable="false" />
+          <Property Type="Int32" Name="Sc" Nullable="false" />
+          <Property Type="Int32" Name="Hp" Nullable="false" />
+          <Property Type="Int32" Name="Mp" Nullable="false" />
+          <Property Type="Int32" Name="MaxHp" Nullable="false" />
+          <Property Type="Int32" Name="MaxMp" Nullable="false" />
+          <Property Type="Int32" Name="Exp" Nullable="false" />
+          <Property Type="Int32" Name="MaxExp" Nullable="false" />
+          <Property Type="Int32" Name="Weight" Nullable="false" />
+          <Property Type="Int32" Name="MaxWeight" Nullable="false" />
+          <Property Type="Int32" Name="WearWeight" Nullable="false" />
+          <Property Type="Int32" Name="MaxWearWeight" Nullable="false" />
+          <Property Type="Int32" Name="HandWeight" Nullable="false" />
+          <Property Type="Int32" Name="MaxHandWeight" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserBagItemInfo1">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="MakeIndex" Nullable="false" />
+          <Property Type="Int32" Name="ItemNumber" Nullable="false" />
+          <Property Type="Int32" Name="Dura" Nullable="false" />
+          <Property Type="String" Name="MaxDura" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Byte" Name="Attribute" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserInfo1">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="sAccount" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Sex" Nullable="false" />
+          <Property Type="Int32" Name="Job" Nullable="false" />
+          <Property Type="Int32" Name="Hair" Nullable="false" />
+          <Property Type="Int32" Name="Dir" Nullable="false" />
+          <Property Type="Int32" Name="PkPoint" Nullable="false" />
+          <Property Type="Int32" Name="GameGold" Nullable="false" />
+          <Property Type="Int32" Name="GameDiaMond" Nullable="false" />
+          <Property Type="Int32" Name="GameGird" Nullable="false" />
+          <Property Type="Int32" Name="GamePoint" Nullable="false" />
+          <Property Type="Int32" Name="GameGlory" Nullable="false" />
+          <Property Type="Int32" Name="MasterCount" Nullable="false" />
+          <Property Type="String" Name="MasterName" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DearName" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="StoragePwd" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="HeroName" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UserItemInfo1">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="MakeIndex" Nullable="false" />
+          <Property Type="Int32" Name="ItemNumber" Nullable="false" />
+          <Property Type="Int32" Name="Dura" Nullable="false" />
+          <Property Type="Int32" Name="MaxDura" Nullable="false" />
+          <Property Type="Byte" Name="Attribute" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserStorageItem">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="MakeIndex" Nullable="false" />
+          <Property Type="Int32" Name="ItemNumber" Nullable="false" />
+          <Property Type="Int32" Name="Dura" Nullable="false" />
+          <Property Type="Int32" Name="MaxDura" Nullable="false" />
+          <Property Type="Byte" Name="Attribute" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Mir2ModelStoreContainer" CdmEntityContainer="Mir2Entities">
+    <EntitySetMapping Name="HumDataInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(Mir2Model.HumDataInfo)">
+        <MappingFragment StoreEntitySet="HumDataInfo">
+          <ScalarProperty Name="nId" ColumnName="nId" />
+          <ScalarProperty Name="dCreateDate" ColumnName="dCreateDate" />
+          <ScalarProperty Name="sChrName" ColumnName="sChrName" />
+          <ScalarProperty Name="sCurMap" ColumnName="sCurMap" />
+          <ScalarProperty Name="wCurX" ColumnName="wCurX" />
+          <ScalarProperty Name="wCurY" ColumnName="wCurY" />
+          <ScalarProperty Name="NG" ColumnName="NG" />
+          <ScalarProperty Name="MaxNG" ColumnName="MaxNG" />
+          <ScalarProperty Name="wStatusTimeArr" ColumnName="wStatusTimeArr" />
+          <ScalarProperty Name="sHomeMap" ColumnName="sHomeMap" />
+          <ScalarProperty Name="wHomeX" ColumnName="wHomeX" />
+          <ScalarProperty Name="wHomeY" ColumnName="wHomeY" />
+          <ScalarProperty Name="btCreditPoint" ColumnName="btCreditPoint" />
+          <ScalarProperty Name="btUnKnow2" ColumnName="btUnKnow2" />
+          <ScalarProperty Name="nBonusPoint" ColumnName="nBonusPoint" />
+          <ScalarProperty Name="btF9" ColumnName="btF9" />
+          <ScalarProperty Name="btIncHealth" ColumnName="btIncHealth" />
+          <ScalarProperty Name="btIncSpell" ColumnName="btIncSpell" />
+          <ScalarProperty Name="btIncHealing" ColumnName="btIncHealing" />
+          <ScalarProperty Name="btEF" ColumnName="btEF" />
+          <ScalarProperty Name="wContribution" ColumnName="wContribution" />
+          <ScalarProperty Name="nHungerStatus" ColumnName="nHungerStatus" />
+          <ScalarProperty Name="btLastOutStatus" ColumnName="btLastOutStatus" />
+          <ScalarProperty Name="btStatus" ColumnName="btStatus" />
+          <ScalarProperty Name="UnKnow" ColumnName="UnKnow" />
+          <ScalarProperty Name="HumMagicsBuff" ColumnName="HumMagicsBuff" />
+          <ScalarProperty Name="HumAddItemsBuff" ColumnName="HumAddItemsBuff" />
+          </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HumInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(Mir2Model.HumInfo)">
+        <MappingFragment StoreEntitySet="HumInfo">
+          <ScalarProperty Name="nID" ColumnName="nID" />
+          <ScalarProperty Name="boDeleted" ColumnName="boDeleted" />
+          <ScalarProperty Name="nSelectID" ColumnName="nSelectID" />
+          <ScalarProperty Name="boIsHero" ColumnName="boIsHero" />
+          <ScalarProperty Name="bt2" ColumnName="bt2" />
+          <ScalarProperty Name="dCreateDate" ColumnName="dCreateDate" />
+          <ScalarProperty Name="sName" ColumnName="sName" />
+          <ScalarProperty Name="sChrName" ColumnName="sChrName" />
+          <ScalarProperty Name="sAccount" ColumnName="sAccount" />
+          <ScalarProperty Name="boDeleted1" ColumnName="boDeleted1" />
+          <ScalarProperty Name="boIsHero1" ColumnName="boIsHero1" />
+          <ScalarProperty Name="dModDate" ColumnName="dModDate" />
+          <ScalarProperty Name="btCount" ColumnName="btCount" />
+          <ScalarProperty Name="boSelected" ColumnName="boSelected" />
+          <ScalarProperty Name="n6" ColumnName="n6" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+          <EntitySetMapping Name="UserStatus1集">
+            <EntityTypeMapping TypeName="Mir2Model.UserStatus1">
+              <MappingFragment StoreEntitySet="UserStatus">
+                <ScalarProperty Name="BodyLuck" ColumnName="BodyLuck" />
+                <ScalarProperty Name="PayMentPoint" ColumnName="PayMentPoint" />
+                <ScalarProperty Name="nLoyal" ColumnName="nLoyal" />
+                <ScalarProperty Name="MarryCount" ColumnName="MarryCount" />
+                <ScalarProperty Name="IsDivorce" ColumnName="IsDivorce" />
+                <ScalarProperty Name="FightZoneDieCount" ColumnName="FightZoneDieCount" />
+                <ScalarProperty Name="AllowGroupReCall" ColumnName="AllowGroupReCall" />
+                <ScalarProperty Name="AllowGuildReCall" ColumnName="AllowGuildReCall" />
+                <ScalarProperty Name="ExpTime" ColumnName="ExpTime" />
+                <ScalarProperty Name="ExpRate" ColumnName="ExpRate" />
+                <ScalarProperty Name="QuestFlag" ColumnName="QuestFlag" />
+                <ScalarProperty Name="GroupRcallTime" ColumnName="GroupRcallTime" />
+                <ScalarProperty Name="AllowGroup" ColumnName="AllowGroup" />
+                <ScalarProperty Name="AttatckMode" ColumnName="AttatckMode" />
+                <ScalarProperty Name="IsHero" ColumnName="IsHero" />
+                <ScalarProperty Name="HaveHero" ColumnName="HaveHero" />
+                <ScalarProperty Name="IsLockLogon" ColumnName="IsLockLogon" />
+                <ScalarProperty Name="IsSelect" ColumnName="IsSelect" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="boMaster" ColumnName="boMaster" />
+                <ScalarProperty Name="ReLevel" ColumnName="ReLevel" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NakedAbility1集">
+            <EntityTypeMapping TypeName="Mir2Model.NakedAbility1">
+              <MappingFragment StoreEntitySet="NakedAbility">
+                <ScalarProperty Name="X2" ColumnName="X2" />
+                <ScalarProperty Name="Speed" ColumnName="Speed" />
+                <ScalarProperty Name="Hit" ColumnName="Hit" />
+                <ScalarProperty Name="Mp" ColumnName="Mp" />
+                <ScalarProperty Name="Hp" ColumnName="Hp" />
+                <ScalarProperty Name="Mac" ColumnName="Mac" />
+                <ScalarProperty Name="Ac" ColumnName="Ac" />
+                <ScalarProperty Name="Sc" ColumnName="Sc" />
+                <ScalarProperty Name="Mc" ColumnName="Mc" />
+                <ScalarProperty Name="Dc" ColumnName="Dc" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserAttribute1集">
+            <EntityTypeMapping TypeName="Mir2Model.UserAttribute1">
+              <MappingFragment StoreEntitySet="UserAttribute">
+                <ScalarProperty Name="MaxHandWeight" ColumnName="MaxHandWeight" />
+                <ScalarProperty Name="HandWeight" ColumnName="HandWeight" />
+                <ScalarProperty Name="MaxWearWeight" ColumnName="MaxWearWeight" />
+                <ScalarProperty Name="WearWeight" ColumnName="WearWeight" />
+                <ScalarProperty Name="MaxWeight" ColumnName="MaxWeight" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="MaxExp" ColumnName="MaxExp" />
+                <ScalarProperty Name="Exp" ColumnName="Exp" />
+                <ScalarProperty Name="MaxMp" ColumnName="MaxMp" />
+                <ScalarProperty Name="MaxHp" ColumnName="MaxHp" />
+                <ScalarProperty Name="Mp" ColumnName="Mp" />
+                <ScalarProperty Name="Hp" ColumnName="Hp" />
+                <ScalarProperty Name="Sc" ColumnName="Sc" />
+                <ScalarProperty Name="Mc" ColumnName="Mc" />
+                <ScalarProperty Name="Dc" ColumnName="Dc" />
+                <ScalarProperty Name="Mac" ColumnName="Mac" />
+                <ScalarProperty Name="Ac" ColumnName="Ac" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserBagItemInfo1集">
+            <EntityTypeMapping TypeName="Mir2Model.UserBagItemInfo1">
+              <MappingFragment StoreEntitySet="UserBagItemInfo">
+                <ScalarProperty Name="Attribute" ColumnName="Attribute" />
+                <ScalarProperty Name="MaxDura" ColumnName="MaxDura" />
+                <ScalarProperty Name="Dura" ColumnName="Dura" />
+                <ScalarProperty Name="ItemNumber" ColumnName="ItemNumber" />
+                <ScalarProperty Name="MakeIndex" ColumnName="MakeIndex" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserInfo1集">
+            <EntityTypeMapping TypeName="Mir2Model.UserInfo1">
+              <MappingFragment StoreEntitySet="UserInfo">
+                <ScalarProperty Name="HeroName" ColumnName="HeroName" />
+                <ScalarProperty Name="StoragePwd" ColumnName="StoragePwd" />
+                <ScalarProperty Name="DearName" ColumnName="DearName" />
+                <ScalarProperty Name="MasterName" ColumnName="MasterName" />
+                <ScalarProperty Name="MasterCount" ColumnName="MasterCount" />
+                <ScalarProperty Name="GameGlory" ColumnName="GameGlory" />
+                <ScalarProperty Name="GamePoint" ColumnName="GamePoint" />
+                <ScalarProperty Name="GameGird" ColumnName="GameGird" />
+                <ScalarProperty Name="GameDiaMond" ColumnName="GameDiaMond" />
+                <ScalarProperty Name="GameGold" ColumnName="GameGold" />
+                <ScalarProperty Name="PkPoint" ColumnName="PkPoint" />
+                <ScalarProperty Name="Dir" ColumnName="Dir" />
+                <ScalarProperty Name="Hair" ColumnName="Hair" />
+                <ScalarProperty Name="Job" ColumnName="Job" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="sAccount" ColumnName="sAccount" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserItemInfo1集">
+            <EntityTypeMapping TypeName="Mir2Model.UserItemInfo1">
+              <MappingFragment StoreEntitySet="UserItemInfo">
+                <ScalarProperty Name="Attribute" ColumnName="Attribute" />
+                <ScalarProperty Name="MaxDura" ColumnName="MaxDura" />
+                <ScalarProperty Name="Dura" ColumnName="Dura" />
+                <ScalarProperty Name="ItemNumber" ColumnName="ItemNumber" />
+                <ScalarProperty Name="MakeIndex" ColumnName="MakeIndex" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserStorageItems">
+            <EntityTypeMapping TypeName="Mir2Model.UserStorageItem">
+              <MappingFragment StoreEntitySet="UserStorageItems">
+                <ScalarProperty Name="Attribute" ColumnName="Attribute" />
+                <ScalarProperty Name="MaxDura" ColumnName="MaxDura" />
+                <ScalarProperty Name="Dura" ColumnName="Dura" />
+                <ScalarProperty Name="ItemNumber" ColumnName="ItemNumber" />
+                <ScalarProperty Name="MakeIndex" ColumnName="MakeIndex" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+    </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Mir2" ZoomLevel="109">
+        <EntityTypeShape EntityType="Mir2Model.HumDataInfo" Width="2.375" PointX="0.5" PointY="0.5" Height="22.868307291666667" IsExpanded="true" />
+        <EntityTypeShape EntityType="Mir2Model.HumInfo" PointX="8.625" PointY="1.5" Width="1.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="Mir2Model.UserStorageItems" Width="2.375" PointX="3.5" PointY="0.5" IsExpanded="false" FillColor="Red" />
+        <EntityTypeShape EntityType="Mir2Model.UserItemInfo" Width="2.375" PointX="3.5" PointY="1" IsExpanded="false" FillColor="Red" />
+        <EntityTypeShape EntityType="Mir2Model.UserInfo" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Mir2Model.UserAttribute" Width="1.5" PointX="10.375" PointY="0.75" FillColor="Red" IsExpanded="false" />
+        <EntityTypeShape EntityType="Mir2Model.UserStatus" Width="2.375" PointX="3.5" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Mir2Model.NakedAbility" Width="2.375" PointX="12.125" PointY="0.75" IsExpanded="false" FillColor="Red" />
+        <EntityTypeShape EntityType="Mir2Model.UserBagItemInfo" Width="1.5" PointX="8.625" PointY="0.75" FillColor="Red" IsExpanded="false" />
+        <EntityTypeShape EntityType="Mir2Model.UserStatus1" Width="1.5" PointX="10.387380222970332" PointY="22.094604711092359" />
+        <EntityTypeShape EntityType="Mir2Model.NakedAbility1" Width="1.5" PointX="7.4586313550633534" PointY="0.53678844894132971" />
+        <EntityTypeShape EntityType="Mir2Model.UserAttribute1" Width="1.5" PointX="0.73403783921806043" PointY="17.173678376327118" />
+        <EntityTypeShape EntityType="Mir2Model.UserBagItemInfo1" Width="1.5" PointX="5.204515263999121" PointY="1.8079844572618531" />
+        <EntityTypeShape EntityType="Mir2Model.UserInfo1" Width="1.5" PointX="9.930721252193079" PointY="24.079017322547276" />
+        <EntityTypeShape EntityType="Mir2Model.UserItemInfo1" Width="1.5" PointX="9.94314218216722" PointY="3.4464198068931791" />
+        <EntityTypeShape EntityType="Mir2Model.UserStorageItem" Width="1.5" PointX="11.94448076558508" PointY="0.85948438982455266" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

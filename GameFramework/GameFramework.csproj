@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AB8DFE62-D072-4ED1-87AF-8DA93CAAADAC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GameFramework</RootNamespace>
+    <AssemblyName>GameFramework</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="lua51">
+      <HintPath>..\libs\lua51.dll</HintPath>
+    </Reference>
+    <Reference Include="LuaInterface">
+      <HintPath>..\libs\LuaInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\M2Server\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataGridViewHelper.cs" />
+    <Compile Include="EntityMgr\AdminMgr.cs" />
+    <Compile Include="EntityMgr\BaseMgr.cs" />
+    <Compile Include="EntityMgr\IManager.cs" />
+    <Compile Include="EntityMgr\MonGenMgr.cs" />
+    <Compile Include="Entity\TAdminInfo.cs" />
+    <Compile Include="Entity\TMonGenInfo.cs" />
+    <Compile Include="IPScaner.cs" />
+    <Compile Include="Common\IList.cs" />
+    <Compile Include="Common\IniFile.cs" />
+    <Compile Include="Common\TStringList.cs" />
+    <Compile Include="DataBase\DbBatch.cs" />
+    <Compile Include="DataBase\DbHelper.cs" />
+    <Compile Include="DataBase\DbProvider.cs" />
+    <Compile Include="DataBase\DbProvider\Access.cs" />
+    <Compile Include="DataBase\DbProvider\MsSql.cs" />
+    <Compile Include="DataBase\DbProvider\MsSqlProvider.cs" />
+    <Compile Include="DataBase\DbProvider\MySql.cs" />
+    <Compile Include="DataBase\DbProvider\Oracle.cs" />
+    <Compile Include="DataBase\DbSession.cs" />
+    <Compile Include="DataBase\DbTrans.cs" />
+    <Compile Include="DataBase\IDbBatch.cs" />
+    <Compile Include="DataBase\IDbProvider.cs" />
+    <Compile Include="DataBase\IDbSession.cs" />
+    <Compile Include="DataBase\IDbTrans.cs" />
+    <Compile Include="DataBase\ILogable.cs" />
+    <Compile Include="DataBase\ProviderFactory.cs" />
+    <Compile Include="DataBase\Repository\SessionRepository.cs" />
+    <Compile Include="DataBase\Repository\SqlServer2005Repository.cs" />
+    <Compile Include="DataBase\SQLParameter.cs" />
+    <Compile Include="EncryptUnit.cs" />
+    <Compile Include="Entity\SUserItem.cs" />
+    <Compile Include="Entity\TBatterPulse.cs" />
+    <Compile Include="Entity\TGoods.cs" />
+    <Compile Include="Entity\TUnbindInfo.cs" />
+    <Compile Include="Entity\TUpgradeInfo.cs" />
+    <Compile Include="Enum\TAttatckMode.cs" />
+    <Compile Include="Enum\TItemType.cs" />
+    <Compile Include="Enum\TLevelExpScheme.cs" />
+    <Compile Include="Enum\TMsgColor.cs" />
+    <Compile Include="Enum\TPosition.cs" />
+    <Compile Include="Extensions\ByteExtension.cs" />
+    <Compile Include="Extensions\DataReaderExtension.cs" />
+    <Compile Include="Extensions\IListExtension.cs" />
+    <Compile Include="Extensions\SByteExtension.cs" />
+    <Compile Include="Extensions\StringExtension.cs" />
+    <Compile Include="Extensions\UserItemExtension.cs" />
+    <Compile Include="GameMsg\GameMsgDef.cs" />
+    <Compile Include="Enum\TMsgType.cs" />
+    <Compile Include="Enum\TNpcType.cs" />
+    <Compile Include="Enum\TObjType.cs" />
+    <Compile Include="Enum\TVarType.cs" />
+    <Compile Include="Factory\MonsterInterface.cs" />
+    <Compile Include="Factory\MonsterService.cs" />
+    <Compile Include="HUtil32.cs" />
+    <Compile Include="LuaBase\LuaFramework.cs" />
+    <Compile Include="LuaBase\LuaFunction.cs" />
+    <Compile Include="MemoryHelper.cs" />
+    <Compile Include="Entity\ColorHelper.cs" />
+    <Compile Include="Entity\TAbility.cs" />
+    <Compile Include="Entity\TAssessHeroDataInfo.cs" />
+    <Compile Include="Entity\TAttribute.cs" />
+    <Compile Include="Entity\TAutoRunInfo.cs" />
+    <Compile Include="Entity\TBindItem.cs" />
+    <Compile Include="Entity\TBoxsInfo.cs" />
+    <Compile Include="Entity\TCheckItem.cs" />
+    <Compile Include="Entity\TClientConf.cs" />
+    <Compile Include="Entity\TClientDealOffInfo.cs" />
+    <Compile Include="Entity\TClientItem.cs" />
+    <Compile Include="Entity\TDisallowInfo.cs" />
+    <Compile Include="Entity\TDoorInfo.cs" />
+    <Compile Include="Entity\TDoorStatus.cs" />
+    <Compile Include="Entity\TDropItem.cs" />
+    <Compile Include="Entity\TDynamicVar.cs" />
+    <Compile Include="Entity\TGameCmd.cs" />
+    <Compile Include="Entity\TGameCommand.cs" />
+    <Compile Include="Entity\TGameConfig.cs" />
+    <Compile Include="Entity\TGlobaSessionInfo.cs" />
+    <Compile Include="Entity\THeroDataInfo.cs" />
+    <Compile Include="Entity\HumanRcd\THumanRcd.cs" />
+    <Compile Include="Entity\TIdxHeader.cs" />
+    <Compile Include="Entity\TLoadDBInfo.cs" />
+    <Compile Include="Entity\TLoadHuman.cs" />
+    <Compile Include="Entity\TLoadUser.cs" />
+    <Compile Include="Entity\TMapCondition.cs" />
+    <Compile Include="Entity\TMapEvent.cs" />
+    <Compile Include="Entity\TMapFlag.cs" />
+    <Compile Include="Entity\TMapInfo.cs" />
+    <Compile Include="Entity\TMapRoute.cs" />
+    <Compile Include="Entity\TMerchantInfo.cs" />
+    <Compile Include="Entity\TMessageBodyW.cs" />
+    <Compile Include="Entity\TMessageBodyWL.cs" />
+    <Compile Include="Entity\TMonDrop.cs" />
+    <Compile Include="Entity\TMonsterInfo.cs" />
+    <Compile Include="Entity\TMsgHeader.cs" />
+    <Compile Include="Entity\TNakedAbility.cs" />
+    <Compile Include="Entity\TOAbility.cs" />
+    <Compile Include="Entity\TOClientItem.cs" />
+    <Compile Include="Entity\TOStdItem.cs" />
+    <Compile Include="Entity\TOUserStateInfo.cs" />
+    <Compile Include="Entity\TQuestUnitStatus.cs" />
+    <Compile Include="Entity\TRecallMigic.cs" />
+    <Compile Include="Entity\TRefineItemInfo.cs" />
+    <Compile Include="Entity\TRGBQuad.cs" />
+    <Compile Include="Entity\TSaveRcd.cs" />
+    <Compile Include="Entity\TAddAbility.cs" />
+    <Compile Include="Entity\TBigStorage.cs" />
+    <Compile Include="Entity\TClientMagic.cs" />
+    <Compile Include="Entity\TDealOffInfo.cs" />
+    <Compile Include="Entity\THeroNeedSaveData.cs" />
+    <Compile Include="Entity\HumanRcd\THumData.cs" />
+    <Compile Include="Entity\HumanRcd\THumDataInfo.cs" />
+    <Compile Include="Entity\THumInfo.cs" />
+    <Compile Include="Entity\Magic\THumMagic.cs" />
+    <Compile Include="Entity\Magic\TMagic.cs" />
+    <Compile Include="Entity\TMapDesc.cs" />
+    <Compile Include="Entity\TMapItem.cs" />
+    <Compile Include="Entity\TMonInfo.cs" />
+    <Compile Include="Entity\TMonItem.cs" />
+    <Compile Include="Entity\TMonItemInfo.cs" />
+    <Compile Include="Entity\TMonSayMsg.cs" />
+    <Compile Include="Enum\TMonStatus.cs" />
+    <Compile Include="Entity\TBatterZhuiXinMessage.cs" />
+    <Compile Include="Entity\TCharDesc.cs" />
+    <Compile Include="Entity\TDefaultMessage.cs" />
+    <Compile Include="Entity\TProcessMessage.cs" />
+    <Compile Include="Entity\TRecordHeader.cs" />
+    <Compile Include="Entity\TSellOffInfo.cs" />
+    <Compile Include="Entity\TSendMessage.cs" />
+    <Compile Include="Entity\TSendUserData.cs" />
+    <Compile Include="Entity\TSessInfo.cs" />
+    <Compile Include="Entity\TShopInfo.cs" />
+    <Compile Include="Entity\TSkillDesc.cs" />
+    <Compile Include="Entity\TSlaveInfo.cs" />
+    <Compile Include="Entity\TStartPoint.cs" />
+    <Compile Include="Entity\TStartScript.cs" />
+    <Compile Include="Entity\TStatusInfo.cs" />
+    <Compile Include="Entity\TStdItem.cs" />
+    <Compile Include="Entity\TSuitItem.cs" />
+    <Compile Include="Entity\TSwitchDataInfo.cs" />
+    <Compile Include="Entity\TUserItem.cs" />
+    <Compile Include="Entity\TUserMagic.cs" />
+    <Compile Include="Entity\TUserOpenInfo.cs" />
+    <Compile Include="Entity\TUserStateInfo.cs" />
+    <Compile Include="Entity\TVisibleMapItem.cs" />
+    <Compile Include="Entity\TWAbility.cs" />
+    <Compile Include="Entity\UnAllowItem.cs" />
+    <Compile Include="Entity\UnAllowMagic.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RandomNumberHelper.cs" />
+    <Compile Include="Statistics.cs" />
+    <Compile Include="Thread\ImmediateExecution.cs" />
+    <Compile Include="Thread\ISchedule.cs" />
+    <Compile Include="Thread\TaskScheduler.cs" />
+    <Compile Include="Thread\ThreadManage.cs" />
+    <Compile Include="Validate\RegexpEngine.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

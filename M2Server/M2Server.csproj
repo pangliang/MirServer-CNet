@@ -1,0 +1,765 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{94031C95-2886-435F-A59A-4C3838252306}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>
+    </StartupObject>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>M2Server</RootNamespace>
+    <AssemblyName>M2Server</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <PublishUrl>C:\Users\John\Desktop\123\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>D:\MirServer\Mir200\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>1</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>E74E9A0636EFF10A4CB8781A801D64D891B6B6F4</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>DELPHI6.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="lua51">
+      <HintPath>..\libs\lua51.dll</HintPath>
+    </Reference>
+    <Reference Include="LuaInterface">
+      <HintPath>..\libs\LuaInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=1.0.0.505, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\EngineStats.cs" />
+    <Compile Include="Base\GameDataBase.cs" />
+    <Compile Include="Command\Cmd\MovemobtoCommand.cs" />
+    <Compile Include="Command\Cmd\ClearCopyItemCommand.cs" />
+    <Compile Include="Command\Cmd\NGLevelCommand.cs" />
+    <Compile Include="Command\Cmd\Normal\DateCommand.cs" />
+    <Compile Include="Command\Cmd\RECALLMOBEXCommand.cs" />
+    <Compile Include="Command\Cmd\Server\ServerStatusCommand.cs" />
+    <Compile Include="Command\Cmd\SysMsgCommand.cs" />
+    <Compile Include="ScriptSystem\ScriptDef.cs" />
+    <Compile Include="ScriptSystem\FunctionDef.cs" />
+    <Compile Include="ScriptSystem\GrobalVarScript.cs" />
+    <Compile Include="ScriptSystem\ScriptEngine.cs" />
+    <Compile Include="ScriptSystem\TScriptBase.cs" />
+    <Compile Include="Views\ActionSpeedConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ActionSpeedConfig.Designer.cs">
+      <DependentUpon>ActionSpeedConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Actors\TUserEngine.cs" />
+    <Compile Include="Views\AttackSabukWallConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AttackSabukWallConfig.Designer.cs">
+      <DependentUpon>AttackSabukWallConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Actors\TAnimalObject.cs" />
+    <Compile Include="Actors\TPlayObject.cs" />
+    <Compile Include="Base\EngineVersion.cs" />
+    <Compile Include="Base\GameBase.cs" />
+    <Compile Include="Command\Cmd\AddGameGoldCommand.cs" />
+    <Compile Include="Command\Cmd\AddGoldCommand.cs" />
+    <Compile Include="Command\Cmd\GameDiaMondCommand.cs" />
+    <Compile Include="Command\Cmd\Guild\AddGuildCommand.cs" />
+    <Compile Include="Command\Cmd\AdjuestExpCommand.cs" />
+    <Compile Include="Command\Cmd\AdjuestLevelCommand.cs" />
+    <Compile Include="Command\Cmd\AdjustExpCommand.cs" />
+    <Compile Include="Command\Cmd\AllowGroupReCallCommand.cs" />
+    <Compile Include="Command\Cmd\AnnouncementCommand.cs" />
+    <Compile Include="Command\Cmd\BackStepCommand.cs" />
+    <Compile Include="Command\BaseCommond.cs" />
+    <Compile Include="Command\Cmd\Items\BindUseItemCommand.cs" />
+    <Compile Include="Command\Cmd\BonuPointCommand.cs" />
+    <Compile Include="Command\Cmd\ChangeAdminModeCommand.cs" />
+    <Compile Include="Command\Cmd\ChangeAttackModeCommand.cs" />
+    <Compile Include="Command\Cmd\ChangeDearNameCommand.cs" />
+    <Compile Include="Command\Cmd\ChangeGenderCommand.cs" />
+    <Compile Include="Command\Cmd\Hero\HeroLevelCommand.cs" />
+    <Compile Include="Command\Cmd\Hero\HeroLoyalCommand.cs" />
+    <Compile Include="Command\Cmd\Items\ChangeItemNameCommand.cs" />
+    <Compile Include="Command\Cmd\ChangeJobCommand.cs" />
+    <Compile Include="Command\Cmd\ChangeLevelCommand.cs" />
+    <Compile Include="Command\Cmd\ChangeMasterNameCommand.cs" />
+    <Compile Include="Command\Cmd\ChangeObModeCommand.cs" />
+    <Compile Include="Command\Cmd\ChangeSabukLordCommand.cs" />
+    <Compile Include="Command\Cmd\ChangeSalveStatusCommand.cs" />
+    <Compile Include="Command\Cmd\ChangeSuperManModeCommand.cs" />
+    <Compile Include="Command\Cmd\ChangeUserFullCommand.cs" />
+    <Compile Include="Command\Cmd\ChangeZenFastStepCommand.cs" />
+    <Compile Include="Command\Cmd\ClearBagItemCommand.cs" />
+    <Compile Include="Command\Cmd\Items\ClearCopyItemCommand.cs" />
+    <Compile Include="Command\Cmd\ClearHumanPasswordCommand.cs" />
+    <Compile Include="Command\Cmd\ClearItemMapCommand.cs" />
+    <Compile Include="Command\Cmd\ClearMapMonsterCommand.cs" />
+    <Compile Include="Command\Cmd\ClearMissionCommand.cs" />
+    <Compile Include="Command\Cmd\GameGloryCommand.cs" />
+    <Compile Include="Command\Cmd\Guild\DelGuildCommand.cs" />
+    <Compile Include="Command\Cmd\Guild\EndGuildCommand.cs" />
+    <Compile Include="Command\Cmd\Guild\ReloadGuildCommand.cs" />
+    <Compile Include="Command\Cmd\ReLoadAdminCommand.cs" />
+    <Compile Include="Command\CommandBaseAttribute.cs" />
+    <Compile Include="Command\CommandManager.cs" />
+    <Compile Include="Command\Cmd\ContestPointCommand.cs" />
+    <Compile Include="Command\Cmd\CreditPointCommand.cs" />
+    <Compile Include="Command\Cmd\DearRecallCommand.cs" />
+    <Compile Include="Command\Cmd\DelBonuPointCommand.cs" />
+    <Compile Include="Command\Cmd\DelDenyAccountLogonCommand.cs" />
+    <Compile Include="Command\Cmd\DelDenyCharNameLogonCommand.cs" />
+    <Compile Include="Command\Cmd\DelDenyIPaddrLogonCommand.cs" />
+    <Compile Include="Command\Cmd\Items\DeleteItemCommand.cs" />
+    <Compile Include="Command\Cmd\DelGameGoldCommand.cs" />
+    <Compile Include="Command\Cmd\DelGoldCommand.cs" />
+    <Compile Include="Command\Cmd\DelGuildCommand.cs" />
+    <Compile Include="Command\Cmd\DelNpcCommand.cs" />
+    <Compile Include="Command\Cmd\DelSkillCommand.cs" />
+    <Compile Include="Command\Cmd\DenyAccountLogonCommand.cs" />
+    <Compile Include="Command\Cmd\DenyCharNameLogonCommand.cs" />
+    <Compile Include="Command\Cmd\DenyIPaddrLogonCommand.cs" />
+    <Compile Include="Command\Cmd\DisableFilterCommand.cs" />
+    <Compile Include="Command\Cmd\DisableSendMsgCommand.cs" />
+    <Compile Include="Command\Cmd\DisableSendMsgListCommand.cs" />
+    <Compile Include="Command\Cmd\EnableSendMsgCommand.cs" />
+    <Compile Include="Command\Cmd\EndContestCommand.cs" />
+    <Compile Include="Command\Cmd\EndGuildCommand.cs" />
+    <Compile Include="Command\Cmd\FireBurnCommand.cs" />
+    <Compile Include="Command\Cmd\ForcedWallconquestWarCommand.cs" />
+    <Compile Include="Command\Cmd\FreePenaltyCommand.cs" />
+    <Compile Include="Command\Cmd\GameGirdCommand.cs" />
+    <Compile Include="Command\Cmd\GameGoldCommand.cs" />
+    <Compile Include="Command\Cmd\GamePointCommand.cs" />
+    <Compile Include="Command\Cmd\Items\GetUserItemsCommand.cs" />
+    <Compile Include="Command\Cmd\GiveMineCommand.cs" />
+    <Compile Include="Command\Cmd\GroupRecallCommand.cs" />
+    <Compile Include="Command\Cmd\GuildRecallCommand.cs" />
+    <Compile Include="Command\Cmd\GuildWarCommand.cs" />
+    <Compile Include="Command\Cmd\HairCommand.cs" />
+    <Compile Include="Command\Cmd\HumanCountCommand.cs" />
+    <Compile Include="Command\Cmd\HumanInfoCommand.cs" />
+    <Compile Include="Command\Cmd\HumanLocalCommand.cs" />
+    <Compile Include="Command\Cmd\HungerCommand.cs" />
+    <Compile Include="Command\Cmd\IncPkPointCommand.cs" />
+    <Compile Include="Command\Cmd\KickHumanCommand.cs" />
+    <Compile Include="Command\Cmd\KillCommand.cs" />
+    <Compile Include="Command\Cmd\LoadAdminCommand.cs" />
+    <Compile Include="Command\Cmd\LockLoginCommand.cs" />
+    <Compile Include="Command\Cmd\LotteryTicketCommand.cs" />
+    <Compile Include="Command\Cmd\LuckPointCommand.cs" />
+    <Compile Include="Command\Cmd\Items\MakeItemCommand.cs" />
+    <Compile Include="Command\Cmd\MapMoveCommand.cs" />
+    <Compile Include="Command\Cmd\MapMoveHumanCommand.cs" />
+    <Compile Include="Command\Cmd\MasterRecallCommand.cs" />
+    <Compile Include="Command\Cmd\MemberFunctionCommand.cs" />
+    <Compile Include="Command\Cmd\MemberFunctionExCommand.cs" />
+    <Compile Include="Command\Cmd\MissionCommand.cs" />
+    <Compile Include="Command\Cmd\MobCommand.cs" />
+    <Compile Include="Command\Cmd\MobCountCommand.cs" />
+    <Compile Include="Command\Cmd\MobFireBurnCommand.cs" />
+    <Compile Include="Command\Cmd\MobLevelCommand.cs" />
+    <Compile Include="Command\Cmd\MobNpcCommand.cs" />
+    <Compile Include="Command\Cmd\MobPlaceCommand.cs" />
+    <Compile Include="Command\Cmd\NpcScriptCommand.cs" />
+    <Compile Include="Command\Cmd\PKpointCommand.cs" />
+    <Compile Include="Command\Cmd\PositionMoveCommand.cs" />
+    <Compile Include="Command\Cmd\PrvMsgCommand.cs" />
+    <Compile Include="Command\Cmd\ReAliveCommand.cs" />
+    <Compile Include="Command\Cmd\RecallHumanCommand.cs" />
+    <Compile Include="Command\Cmd\RecallMobCommand.cs" />
+    <Compile Include="Command\Cmd\ReconnectionCommand.cs" />
+    <Compile Include="Command\Cmd\RefineWeaponCommand.cs" />
+    <Compile Include="Command\Cmd\ReGotoHumanCommand.cs" />
+    <Compile Include="Command\Cmd\ReloadAbuseCommand.cs" />
+    <Compile Include="Command\Cmd\ReloadGuildCommand.cs" />
+    <Compile Include="Command\Cmd\ReloadLineNoticeCommand.cs" />
+    <Compile Include="Command\Cmd\ReloadManageCommand.cs" />
+    <Compile Include="Command\Cmd\ReloadMonItemsCommand.cs" />
+    <Compile Include="Command\Cmd\ReloadNpcCommand.cs" />
+    <Compile Include="Command\Cmd\ReloadRobotCommand.cs" />
+    <Compile Include="Command\Cmd\ReloadRobotManageCommand.cs" />
+    <Compile Include="Command\Cmd\ReNewLevelCommand.cs" />
+    <Compile Include="Command\Cmd\RestBonuPointCommand.cs" />
+    <Compile Include="Command\Cmd\RestHeroCommand.cs" />
+    <Compile Include="Command\Cmd\SbkDoorControlCommand.cs" />
+    <Compile Include="Command\Cmd\SearchDearCommand.cs" />
+    <Compile Include="Command\Cmd\SearchHumanCommand.cs" />
+    <Compile Include="Command\Cmd\SearchMasterCommand.cs" />
+    <Compile Include="Command\Cmd\SetMapModeCommamd.cs" />
+    <Compile Include="Command\Cmd\SetPermissionCommand.cs" />
+    <Compile Include="Command\Cmd\ShowDenyAccountLogonCommand.cs" />
+    <Compile Include="Command\Cmd\ShowDenyCharNameLogonCommand.cs" />
+    <Compile Include="Command\Cmd\ShowDenyIPaddrLogonCommand.cs" />
+    <Compile Include="Command\Cmd\ShowEffectCommand.cs" />
+    <Compile Include="Command\Cmd\ShowHumanFlagCommand.cs" />
+    <Compile Include="Command\Cmd\ShowMapInfoCommand.cs" />
+    <Compile Include="Command\Cmd\ShowMapModeCommand.cs" />
+    <Compile Include="Command\Cmd\ShowSbkGoldCommand.cs" />
+    <Compile Include="Command\Cmd\Items\ShowUseItemInfoCommand.cs" />
+    <Compile Include="Command\Cmd\ShutupCommand.cs" />
+    <Compile Include="Command\Cmd\ShutupListCommand.cs" />
+    <Compile Include="Command\Cmd\ShutupReleaseCommand.cs" />
+    <Compile Include="Command\Cmd\SignMapMoveCommand.cs" />
+    <Compile Include="Command\Cmd\SmakeItemCommand.cs" />
+    <Compile Include="Command\Cmd\SpirtStartCommand.cs" />
+    <Compile Include="Command\Cmd\SpirtStopCommand.cs" />
+    <Compile Include="Command\Cmd\StartContestCommand.cs" />
+    <Compile Include="Command\Cmd\StartQuestCommand.cs" />
+    <Compile Include="Command\Cmd\SuperTingCommand.cs" />
+    <Compile Include="Command\Cmd\TakeOffHorseCommand.cs" />
+    <Compile Include="Command\Cmd\TakeOnHorseCommand.cs" />
+    <Compile Include="Command\Cmd\TestFireCommand.cs" />
+    <Compile Include="Command\Cmd\TestGetBagItemsCommand.cs" />
+    <Compile Include="Command\Cmd\TestSpeedModeCommand.cs" />
+    <Compile Include="Command\Cmd\TestStatusCommand.cs" />
+    <Compile Include="Command\Cmd\TingCommand.cs" />
+    <Compile Include="Command\Cmd\TrainingCommand.cs" />
+    <Compile Include="Command\Cmd\TrainingMagicCommand.cs" />
+    <Compile Include="Command\Cmd\TrainingSkillCommand.cs" />
+    <Compile Include="Command\Cmd\UnBindUseItemCommand.cs" />
+    <Compile Include="Command\Cmd\UserCmdCommand.cs" />
+    <Compile Include="Command\Cmd\UserMoveXYCommand.cs" />
+    <Compile Include="Command\Cmd\ViewWhisperCommand.cs" />
+    <Compile Include="CustomControl\frmInputBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomControl\frmInputBox.Designer.cs">
+      <DependentUpon>frmInputBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControl\InputBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControl\InputBox.Designer.cs">
+      <DependentUpon>InputBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Guilds\Castle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\CastleManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CastleManage.Designer.cs">
+      <DependentUpon>CastleManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConfigMerchant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ConfigMerchant.Designer.cs">
+      <DependentUpon>ConfigMerchant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConfigMonGen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ConfigMonGen.Designer.cs">
+      <DependentUpon>ConfigMonGen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Magic\MagicBaseAttribute.cs" />
+    <Compile Include="Magic\MagicConst.cs" />
+    <Compile Include="Magic\Skills\MagMakeFireball.cs" />
+    <Compile Include="MapEvent\TEventManager.cs" />
+    <Compile Include="MapEvent\TFireBurnEvent.cs" />
+    <Compile Include="MapEvent\TFlowerEvent.cs" />
+    <Compile Include="MapEvent\THolyCurtainEvent.cs" />
+    <Compile Include="MapEvent\TPileStones.cs" />
+    <Compile Include="MapEvent\TSafeEvent.cs" />
+    <Compile Include="MapEvent\TStoneMineEvent.cs" />
+    <Compile Include="Map\Envir.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MapEvent\Event.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actors\FrnEngn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\FSrvValue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FSrvValue.Designer.cs">
+      <DependentUpon>FSrvValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FunctionConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FunctionConfig.Designer.cs">
+      <DependentUpon>FunctionConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GameCommand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\GameCommand.Designer.cs">
+      <DependentUpon>GameCommand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GameConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\GameConfig.Designer.cs">
+      <DependentUpon>GameConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GeneralConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\GeneralConfig.Designer.cs">
+      <DependentUpon>GeneralConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Guilds\Guild.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\GuildManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\GuildManage.Designer.cs">
+      <DependentUpon>GuildManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Guilds\TCastleManager.cs" />
+    <Compile Include="Guilds\TGuildManager.cs" />
+    <Compile Include="Views\HeroConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\HeroConfig.Designer.cs">
+      <DependentUpon>HeroConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HumanInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\HumanInfo.Designer.cs">
+      <DependentUpon>HumanInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IdSrvClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\IdSrvClient.Designer.cs">
+      <DependentUpon>IdSrvClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InterMsgClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\InterMsgClient.Designer.cs">
+      <DependentUpon>InterMsgClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InterServerMsg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\InterServerMsg.Designer.cs">
+      <DependentUpon>InterServerMsg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ItemSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ItemSet.Designer.cs">
+      <DependentUpon>ItemSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItmUnit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LocalDB.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="M2Share.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Magic\Magic.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Magic\TMagicManager.cs" />
+    <Compile Include="Map\TEnvirnoment.cs" />
+    <Compile Include="Map\TMapManager.cs" />
+    <Compile Include="Views\MonsterConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MonsterConfig.Designer.cs">
+      <DependentUpon>MonsterConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monster\MonFactory.cs" />
+    <Compile Include="Monster\MonRace\TArcherMonster.cs" />
+    <Compile Include="Monster\MonRace\TATMonster.cs" />
+    <Compile Include="Monster\MonRace\TBigPoisionSpider.cs" />
+    <Compile Include="Monster\MonRace\TChickenDeer.cs" />
+    <Compile Include="Monster\MonRace\TCowKingMonster.cs" />
+    <Compile Include="Monster\MonRace\TCowMonster.cs" />
+    <Compile Include="Monster\MonRace\TDigOutZombi.cs" />
+    <Compile Include="Monster\MonRace\TDualAxeMonster.cs" />
+    <Compile Include="Monster\MonRace\TElectronicScolpionMon.cs" />
+    <Compile Include="Monster\MonRace\TElfMonster.cs" />
+    <Compile Include="Monster\MonRace\TElfWarriorMonster.cs" />
+    <Compile Include="Monster\MonRace\TFairyMonster.cs" />
+    <Compile Include="Monster\MonRace\TGasAttackMonster.cs" />
+    <Compile Include="Monster\MonRace\TGasDungMonster.cs" />
+    <Compile Include="Monster\MonRace\TGasMothMonster.cs" />
+    <Compile Include="Monster\MonRace\TheCrutchesSpider.cs" />
+    <Compile Include="Monster\MonRace\THighRiskSpider.cs" />
+    <Compile Include="Monster\MonRace\TLightingZombi.cs" />
+    <Compile Include="Monster\MonRace\TMagCowMonster.cs" />
+    <Compile Include="Monster\MonRace\TSalamanderATMonster.cs" />
+    <Compile Include="Monster\MonRace\TScorpion.cs" />
+    <Compile Include="Monster\MonRace\TScultureKingMonster.cs" />
+    <Compile Include="Monster\MonRace\TScultureMonster.cs" />
+    <Compile Include="Monster\MonRace\TSlowATMonster.cs" />
+    <Compile Include="Monster\MonRace\TSpitSpider.cs" />
+    <Compile Include="Monster\MonRace\TSwordsmanMon.cs" />
+    <Compile Include="Monster\MonRace\TTempleGuardian.cs" />
+    <Compile Include="Monster\MonRace\TThornDarkMonster.cs" />
+    <Compile Include="Monster\MonRace\TWhiteSkeleton.cs" />
+    <Compile Include="Monster\MonRace\TYanLeiWangSpider.cs" />
+    <Compile Include="Monster\MonRace\TZilKinZombi.cs" />
+    <Compile Include="Monster\MonRace\TDevilBat.cs" />
+    <Compile Include="Monster\MonRace\TFireDragon.cs" />
+    <Compile Include="Monster\MonRace\TFireDragonGuard.cs" />
+    <Compile Include="Monster\MonRace\TGiantSickleSpiderATMonster.cs" />
+    <Compile Include="Monster\MonRace\TSnowyFireDay.cs" />
+    <Compile Include="Monster\MonRace\TSnowyHanbing.cs" />
+    <Compile Include="Monster\MonRace\TSnowyWuDu.cs" />
+    <Compile Include="NoticeM.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NPC\TCastleOfficial.cs" />
+    <Compile Include="NPC\TGuildOfficial.cs" />
+    <Compile Include="NPC\TMerchant.cs" />
+    <Compile Include="NPC\TNormNpc.cs" />
+    <Compile Include="NPC\TTrainer.cs" />
+    <Compile Include="Actors\TBaseObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NPC\ObjGuard.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actors\ObjHero.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Monster\ObjMon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Monster\ObjMon2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NPC\ObjNpc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Monster\MonRace\ObjPlayMon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Robot\ObjPlayRobot.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Robot\ObjRobot.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\OnlineMsg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\OnlineMsg.Designer.cs">
+      <DependentUpon>OnlineMsg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Robot\TPlayRobotManage.cs" />
+    <Compile Include="Robot\TRobotManage.cs" />
+    <Compile Include="RunDB.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RunSock.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SysManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SysManager.designer.cs">
+      <DependentUpon>SysManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\UsrEngn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\FrmAboutUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmAboutUnit.Designer.cs">
+      <DependentUpon>FrmAboutUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewCompoundInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ViewCompoundInfo.Designer.cs">
+      <DependentUpon>ViewCompoundInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewKernelInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ViewKernelInfo.Designer.cs">
+      <DependentUpon>ViewKernelInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewLevel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ViewLevel.Designer.cs">
+      <DependentUpon>ViewLevel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ViewList.Designer.cs">
+      <DependentUpon>ViewList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewList2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ViewList2.Designer.cs">
+      <DependentUpon>ViewList2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewOnlineHuman.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ViewOnlineHuman.Designer.cs">
+      <DependentUpon>ViewOnlineHuman.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewSession.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ViewSession.Designer.cs">
+      <DependentUpon>ViewSession.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Grobal2.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="SDK.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Views\AttackSabukWallConfig.resx">
+      <DependentUpon>AttackSabukWallConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CastleManage.resx">
+      <DependentUpon>CastleManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ConfigMerchant.resx">
+      <DependentUpon>ConfigMerchant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ConfigMonGen.resx">
+      <DependentUpon>ConfigMonGen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControl\frmInputBox.resx">
+      <DependentUpon>frmInputBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FSrvValue.resx">
+      <DependentUpon>FSrvValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FunctionConfig.resx">
+      <DependentUpon>FunctionConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\GameConfig.resx">
+      <DependentUpon>GameConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\GeneralConfig.resx">
+      <DependentUpon>GeneralConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\GuildManage.resx">
+      <DependentUpon>GuildManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\HeroConfig.resx">
+      <DependentUpon>HeroConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\HumanInfo.resx">
+      <DependentUpon>HumanInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\IdSrvClient.resx">
+      <DependentUpon>IdSrvClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ItemSet.resx">
+      <DependentUpon>ItemSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\OnlineMsg.resx">
+      <DependentUpon>OnlineMsg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SysManager.resx">
+      <DependentUpon>SysManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmAboutUnit.resx">
+      <DependentUpon>FrmAboutUnit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ViewCompoundInfo.resx">
+      <DependentUpon>ViewCompoundInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ViewKernelInfo.resx">
+      <DependentUpon>ViewKernelInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ViewLevel.resx">
+      <DependentUpon>ViewLevel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ViewList2.resx">
+      <DependentUpon>ViewList2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ViewOnlineHuman.resx">
+      <DependentUpon>ViewOnlineHuman.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ViewSession.resx">
+      <DependentUpon>ViewSession.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GameFramework\GameFramework.csproj">
+      <Project>{ab8dfe62-d072-4ed1-87af-8da93caaadac}</Project>
+      <Name>GameFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NetFramework\NetFramework.csproj">
+      <Project>{9f6ea8c8-47cc-4a8c-8f47-9254a47b8de5}</Project>
+      <Name>NetFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Config\DB.connection">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v3.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DELPHI6.ico" />
+    <None Include="Resources\DELPHI6.ico" />
+    <None Include="Resources\M2.bmp" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+      <Target Name="BeforeBuild">
+      </Target>
+     <Target Name="AfterBuild">
+     </Target>
+-->
+</Project>
